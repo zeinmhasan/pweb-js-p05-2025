@@ -16,8 +16,8 @@ const modalInstructions = document.getElementById('modalInstructions');
 const closeBtn = document.querySelector('.close-btn');
 
 // Proteksi halaman
-if (!userData) window.location.href = 'index.html';
-userName.textContent = userData.firstName;
+// if (!userData) window.location.href = 'index.html';
+// userName.textContent = userData.firstName;
 
 // Logout
 logoutBtn.addEventListener('click', () => {
