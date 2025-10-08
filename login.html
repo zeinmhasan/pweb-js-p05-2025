@@ -1,35 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
-  <link rel="stylesheet" href="css/login.css" />
-</head>
-<body>
-  <div class="login-container">
-    <div class="login-card">
-      <h1>Login</h1>
-
-      <form id="loginForm">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Masukkan username" required />
-
-        <label for="password">Password</label>
-        <div class="password-wrapper">
-          <input type="password" id="password" placeholder="Masukkan password" required />
-          <span class="toggle-password" id="togglePassword">🫣</span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Masuk | Recipe</title>
+    <meta name="description" content="Masuk untuk menyimpan dan mengelola resep favorit Anda." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Gunakan sistem font agar ringan; tidak perlu CDN fonts -->
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <main class="auth" aria-labelledby="auth-title">
+      <section class="auth__panel auth__panel--info" aria-hidden="true">
+        <div class="brand">
+          <h1 class="brand__title">Recipe</h1>
+          <p class="brand__tagline">Resep harian, rasa istimewa.</p>
         </div>
+        <ul class="benefits" role="list">
+          <li>Simpan dan kelola resep</li>
+          <li>Mode gelap/terang otomatis</li>
+          <li>Rapi dan cepat di semua perangkat</li>
+        </ul>
+      </section>
 
-        <button type="submit" id="loginBtn">Login</button>
-      </form>
+      <section class="auth__panel auth__panel--form">
+        <header class="form__header">
+          <h2 id="auth-title" class="form__title">Masuk</h2>
+          <p class="form__subtitle">Gunakan email dan kata sandi Anda.</p>
+        </header>
 
-      <p id="message"></p>
-      <div class="loading" id="loading"></div>
-    </div>
-  </div>
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="username">Username</label>
+            <input id="email" name="email" type="email" inputmode="username" autocomplete="username" required />
+            <p class="field__error" id="email-error" aria-live="polite"></p>
+          </div>
 
-  <script src="js/login.js"></script>
-</body>
+          <div class="field">
+            <label for="password">Kata sandi</label>
+            <div class="password">
+              <input id="password" name="password" type="password" autocomplete="current-password" minlength="6" required />
+              <button type="button" class="password__toggle" aria-controls="password" aria-label="Tampilkan kata sandi">Tampilkan</button>
+            </div>
+            <p class="field__error" id="password-error" aria-live="polite"></p>
+          </div>
+
+          <div class="form__row">
+          <button id="submit" type="submit" class="btn btn--primary">Masuk</button>
+
+          <div class="divider" role="separator" aria-label="atau"></div>
+
+        </form>
+
+        <footer class="form__footer" aria-label="Keamanan">
+          <small>Dengan masuk, Anda menyetujui kebijakan privasi kami.</small>
+        </footer>
+      </section>
+    </main>
+
+    <script src="js/login.js" defer></script>
+  </body>
 </html>
-
