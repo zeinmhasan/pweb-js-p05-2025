@@ -14,7 +14,7 @@ body {
   color: #333;
 }
 
-/* CONTAINER */
+/* LOGIN */
 .login-container {
   display: flex;
   justify-content: center;
@@ -22,7 +22,6 @@ body {
   width: 100%;
 }
 
-/* CARD */
 .login-card {
   background: #fff;
   border-radius: 20px;
@@ -33,11 +32,9 @@ body {
   animation: fadeIn 0.7s ease;
 }
 
-
-/* TITLE */
 h1 {
   color: #e97311;
-  margin-bottom: 25px; /* dinaikkan jarak ke form */
+  margin-bottom: 25px;
   font-size: 1.8rem;
 }
 
@@ -97,7 +94,7 @@ button:hover {
   opacity: 1;
 }
 
-/* LOADING SPINNER */
+/* LOADING */
 .loading {
   display: none;
   width: 30px;
@@ -119,3 +116,4 @@ button:hover {
   to { opacity: 1; transform: translateY(0); }
 
 }
+
