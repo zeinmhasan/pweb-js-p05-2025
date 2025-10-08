@@ -20,6 +20,15 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordInput = document.getElementById("password");
+
+togglePassword.addEventListener("click", () => {
+  const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+  passwordInput.setAttribute("type", type);
+  togglePassword.textContent = type === "password" ? "🫣" : "😌";
+});
+
   try {
     const res = await fetch("https://dummyjson.com/users");
     const data = await res.json();
