@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MyRecipes — Temukan & Simpan Resep</title>
+    <meta name="theme-color" content="#F28F14" />
+    <meta name="description" content="Cari, simpan, dan kelola resep favorit Anda di satu tempat." />
+    <link rel="stylesheet" href="./css/welcome.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Lewati ke konten utama</a>
+
+    <header class="site-header" role="banner">
+      <div class="container">
+        <!-- brand menjadi tautan agar mudah kembali ke welcome -->
+        <a class="brand" href="./app.html">MyRecipes</a>
+        <nav aria-label="Akun">
+          <a class="btn btn-ghost" href="./login.html">Log In</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-label="Sorotan resep">
+        <div id="slides" class="slides" aria-hidden="true"></div>
+
+        <div class="hero-overlay">
+          <div class="container hero-content">
+            <h1 class="headline text-balance">Jangan Kehilangan Resep Lagi</h1>
+            <p class="subhead">Cari, simpan, dan atur 100k+ resep dalam satu tempat yang rapi.</p>
+
+            <form id="search-form" class="search" role="search" aria-label="Cari resep">
+              <input name="q" type="search" placeholder="Cari 100k+ resep lintas brand" aria-label="Kata kunci resep" />
+              <button type="submit" class="btn btn-dark">Cari</button>
+              <a class="btn btn-primary" href="./login.html" role="button" aria-label="Bergabung gratis">Join for Free</a>
+            </form>
+          </div>
+
+          <div class="controls" aria-hidden="false">
+            <button id="prev" class="ctrl" aria-label="Sebelumnya">‹</button>
+            <button id="next" class="ctrl" aria-label="Berikutnya">›</button>
+          </div>
+
+          <div class="gradient-bottom" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="brands">
+        <div class="container">
+          <h2 class="section-title">Resep dari brand yang Anda kenal</h2>
+          <div class="brand-row" role="list">
+            <img src="https://i.pinimg.com/736x/58/27/cd/5827cd0a434e79e0380efe61b42d9d59.jpg" alt="Brand koleksi daging panggang" role="listitem" />
+            <img src="https://i.pinimg.com/1200x/31/bd/88/31bd88cc2c87124bc29a9009609be881.jpg" alt="Brand koleksi pasta" role="listitem" />
+            <img src="https://i.pinimg.com/1200x/02/52/57/025257b5c6271ce70e2a583174c27fd0.jpg" alt="Brand Sarapan Telur" role="listitem" />
+            <img src="https://i.pinimg.com/736x/94/18/f9/9418f92a8f3290922994575d5f01ce17.jpg" alt="Brand sarapan dan telur" role="listitem" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>&copy; <span id="year"></span> MyRecipes. Semua hak dilindungi.</small>
+      </div>
+    </footer>
+
+    <script src="./js/welcome.js" defer></script>
+  </body>
+</html>
