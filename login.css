@@ -38,6 +38,27 @@ h1 {
   font-size: 1.8rem;
 }
 
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1rem;
+  color: #f28f14;
+  transition: 0.2s;
+}
+
+.toggle-password:hover {
+  color: #e97311;
+  transform: translateY(-50%) scale(1.1);
+}
+
+
 /* FORM INPUT */
 label {
   display: block;
@@ -116,5 +137,3 @@ button:hover {
   to { opacity: 1; transform: translateY(0); }
 
 }
-
-
