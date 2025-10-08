@@ -1,0 +1,121 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #333;
+}
+
+/* CONTAINER */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* CARD */
+.login-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* shadow dibuat lebih tebal dan merata */
+  padding: 2.5rem 3rem;
+  width: 340px;
+  text-align: center;
+  animation: fadeIn 0.7s ease;
+}
+
+
+/* TITLE */
+h1 {
+  color: #e97311;
+  margin-bottom: 25px; /* dinaikkan jarak ke form */
+  font-size: 1.8rem;
+}
+
+/* FORM INPUT */
+label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+  font-size: 0.95rem;
+}
+
+input:focus {
+  border-color: #f5ac19;
+  box-shadow: 0 0 4px #f5ac19;
+}
+
+/* BUTTON */
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: linear-gradient(90deg, #f28f14, #f5ac19);
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #e97311, #edcb14);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* MESSAGE */
+#message {
+  margin-top: 15px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#message.show {
+  opacity: 1;
+}
+
+/* LOADING SPINNER */
+.loading {
+  display: none;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #f5ac19;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  margin: 15px auto 0;
+  animation: spin 1s linear infinite;
+}
+
+/* ANIMATIONS */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
