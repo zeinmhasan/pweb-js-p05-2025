@@ -26,14 +26,19 @@ form.addEventListener("submit", async (e) => {
     const user = data.users.find(u => u.username === username);
 
     if (user) {
-      localStorage.setItem("user", JSON.stringify(user));
-      message.textContent = "Login berhasil! Mengarahkan...";
-      message.style.color = "#edcb14";
-      message.classList.add("show");
-
-      setTimeout(() => {
-        window.location.href = "recipes.html";
-      }, 1200);
+      if (password !== "password") {
+        message.textContent = "Password salah!";
+        message.style.color = "#e97311";
+        message.classList.add("show");
+      } else {
+        localStorage.setItem("firstName", user.firstName);
+        message.textContent = "Login berhasil! Mengarahkan...";
+        message.style.color = "#edcb14";
+        message.classList.add("show");
+        setTimeout(() => {
+          window.location.href = "recipes.html";
+        }, 1200);
+      }
     } else {
       message.textContent = "Username tidak ditemukan.";
       message.style.color = "#e97311";
