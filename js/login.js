@@ -115,7 +115,7 @@
       else localStorage.removeItem("recipe_username")
 
       showToast("Berhasil masuk. Mengarahkan…")
-      setTimeout(() => (window.location.href = "app.html"), 800)
+      setTimeout(() => (window.location.href = "recipe.html"), 800)
     } catch (err) {
       if (pwErr) pwErr.textContent = "Terjadi kesalahan jaringan. Coba lagi."
       console.log("[v0] login error:", err)

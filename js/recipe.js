@@ -1,5 +1,6 @@
 // ---- recipe.js ----
-const userData = JSON.parse(localStorage.getItem("user"));
+const userData = JSON.parse(localStorage.getItem("auth_user"));
+const token = localStorage.getItem("auth_token");
 const userName = document.getElementById("userName");
 const logoutBtn = document.getElementById("logoutBtn");
 const recipesContainer = document.getElementById("recipesContainer");
@@ -22,16 +23,26 @@ const modalIngredients = document.getElementById("modalIngredients");
 const modalInstructions = document.getElementById("modalInstructions");
 const closeBtn = document.querySelector(".close-btn");
 
-// Proteksi halaman (kalau belum login, balik ke index)
-if (!userData) {
+// Proteksi halaman
+if (!userData || !token) {
   window.location.href = "./login.html";
 } else {
-  userName.textContent = userData.firstName || "User";
+  // Ambil firstName langsung jika ada; kalau tidak, ambil kata pertama dari "name".
+  // Terakhir fallback ke potongan pertama dari username.
+  const firstNameOnly =
+    (userData.firstName && String(userData.firstName).trim()) ||
+    (userData.name && String(userData.name).trim().split(/\s+/)[0]) ||
+    (userData.username && String(userData.username).split(/[._-]/)[0]) ||
+    "User";
+
+  userName.textContent = firstNameOnly;
 }
 
-// Logout
+
+// Logout: hapus keduanya
 logoutBtn.addEventListener("click", () => {
-  localStorage.removeItem("user");
+  localStorage.removeItem("auth_user");
+  localStorage.removeItem("auth_token");
   window.location.href = "./login.html";
 });
 
